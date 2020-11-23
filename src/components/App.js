@@ -26,7 +26,7 @@ class App extends React.Component {
   };
   handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      let time = parseInt(event.target.value, 10);
+      let time = event.target.value;
       this.startTimer(time);
     }
   };
