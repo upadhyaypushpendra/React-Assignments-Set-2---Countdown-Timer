@@ -6,10 +6,11 @@ class App extends React.Component {
     super(props);
     this.state = { currentTime: 0, timerId: undefined };
   }
-  startTimer = (time) => {
-    if (isNaN(time)) {
+  startTimer = (input) => {
+    if (isNaN(input)) {
       this.setState({ currentTime: 0 });
     } else {
+      let time = parseInt(input, 10);
       if (this.state.timerId) clearInterval(this.state.timerId);
       this.setState({ currentTime: time });
       let timerId = setInterval(() => {
